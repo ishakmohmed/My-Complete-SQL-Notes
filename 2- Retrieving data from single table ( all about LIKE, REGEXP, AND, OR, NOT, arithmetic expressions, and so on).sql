@@ -4,7 +4,7 @@
 -- NOTE: IN THE SQL language, you should enlose dates with quotes!!!!!
 SELECT * 
 FROM customers
-WHERE states <>
+WHERE states <> 'VA'
 -- 'VA' va can be lowercase too, btw, <> means not equal to
 -- WHERE birth_date > '1990-01-01'
 -- year, month, day 
@@ -17,6 +17,8 @@ SELECT *
 FROM customers
 WHERE NOT (birth_date >= '1990-01-01' OR points > 1000) 
 -- so NOT is applied to >=, OR, & > in this case so each of these are reversed
+
+-- **************************************************
 
 SELECT * 
 FROM customers 
@@ -40,6 +42,8 @@ WHERE last_name LIKE '%b%'
 
 -- NEW CONCEPT: WHERE last_name LIKE '_____y' means it ends with y with exactly 5 character before it!
 -- other example >>> WHERE last_name LIKE 'b____y'
+
+-- **************************************************
 
 SELECT *
 FROM customers 
@@ -91,13 +95,19 @@ SELECT *
 FROM customers 
 WHERE first_name REGEXP 'ELKA|AMBUR'
 
+-- **************************************************
+
 SELECT *
 FROM customers 
 WHERE last_name REGEXP 'ey$|on$'
 
+-- **************************************************
+
 SELECT * 
 FROM customers
 WHERE last_name REGEXP '^MY|SE'
+
+-- **************************************************
 
 SELECT * 
 FROM customers
@@ -112,6 +122,8 @@ SELECT *
 FROM customers
 WHERE phone IS NOT NULL 
 -- you can also not include "NOT" here so it becomes IS NULL
+
+-- **************************************************
 
 SELECT * 
 FROM orders
@@ -145,7 +157,7 @@ LIMIT 3
 SELECT *
 FROM customers
 LIMIT 6, 3 
--- skip first 6 records, and choose 3 records!
+-- skip first 6 records, and choose the next 3 records!
 
 -- **************************************************
 
