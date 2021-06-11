@@ -158,7 +158,7 @@ SELECT
 	c.first_name AS customer,
     p.name AS product
 FROM customers c, products p 
--- implicit cross join, no CROSS, no JOIN, no Cristiano Jr. , instead you select from multiple tables in A SINGLE FROM clause!
+-- implicit cross join, no CROSS, no JOIN, instead you select from multiple tables in A SINGLE FROM clause!
 ORDER BY c.first_name
 
 -- **************************************************
@@ -174,10 +174,6 @@ SELECT
 FROM orders
 WHERE order_date >= '2019-01-01'
 UNION 
-
--- **************************************************
-
--- THE UNION OPERATOR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 SELECT 
 	order_id,
     order_date,
