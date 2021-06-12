@@ -65,7 +65,6 @@ ORDER BY c.customer_id
 
 -- **************************************************
 
--- NOTE: VERY IMPORTANT: FROM A TABLE, YOU JOIN ANOTHER, AND THEN FROM THE SAME TABLE YOU JOIN ANOTHER, ITS LIKE A STAR TOPOLOGY.
 SELECT 
 	o.order_date,
     o.order_id,
