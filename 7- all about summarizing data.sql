@@ -60,18 +60,18 @@ GROUP BY state, city
 
 -- EXERCISE >
 SELECT 
-	   date, 
+	date, 
     name AS payment_method,
     SUM(amount) AS total_payment
 FROM payments p
 JOIN payment_methods pm
-						ON p.payment_method = pm.payment_method_id
+	ON p.payment_method = pm.payment_method_id
 GROUP BY date, payment_method
 ORDER BY date
  
  -- **************************************************
 
--- TITLE: THE HAVING CLAUSE >>>>>>>
+-- TITLE: THE HAVING CLAUSE >>>
 -- NOTE: with WHERE clause we can filter data before rows are grouped, with HAVING- after grouped && HAVING NEEDA refer cols in SELECT unlike WHERE clause which can refer anything it wants!
 SELECT 
 	client_id,
@@ -132,4 +132,4 @@ SELECT
 FROM payments p
 JOIN payment_methods pm ON p.payment_method = pm.payment_method_id
 GROUP BY pm.name WITH ROLLUP   
--- column name cannot be alias because you've got WITH ROLLUP
+-- column name cannot be alias because you've got WITH ROLLUP (basically in GROUP BY clause, I'm writing pm.name instead of payment method which is the alias)
