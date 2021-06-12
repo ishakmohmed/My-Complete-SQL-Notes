@@ -1,5 +1,5 @@
 INSERT INTO customers 
--- optionally, you can specify which columns you wanna insert data into, and then insert to just those cols, and you can mix up the orders.
+-- optionally, you can specify which columns you wanna insert data into (after insert into customers statement, just add a parantheses and column names separated by comma, and then proceed with values clause), and then insert to just those cols, and you can mix up the orders.
 VALUES (DEFAULT,
 		'John',
         'Smith',
@@ -13,7 +13,7 @@ VALUES (DEFAULT,
 
  -- **************************************************
 
-INSERTING MULTIPLE ROWS >>>
+-- INSERTING MULTIPLE ROWS >>>
 INSERT INTO shippers(name)
 VALUES ('Shipper1'),
 		('Shipper2'),
@@ -58,7 +58,8 @@ SELECT * FROM orders
 -- **************************************************
 
 INSERT INTO orders_archived
-SELECT * -- also a subquery!
+SELECT * 
+-- also a subquery!
 FROM orders 
 WHERE order_date < '2019-01-01'
 
@@ -83,12 +84,14 @@ WHERE i.payment_date IS NOT NULL
 
 -- **************************************************
 
--- TITLE: UPDATING A SINGLE ROW >>>>>>>>>>>>>>>>>>>
+-- TITLE: UPDATING A SINGLE ROW >>>
 -- NOTE: when you wanna update something, you set stuffs, update? set!, update = set, set existing stuffs!
 
 UPDATE invoices
 SET payment_total = DEFAULT, payment_date = NULL 
 WHERE invoice_id = 1
+
+-- **************************************************
 
 UPDATE invoices 
 SET 
@@ -98,9 +101,9 @@ WHERE invoice_id = 3
 
 -- **************************************************
 
--- TITLE: UPDATING MULTIPLE ROWS (same like single row, just make "WHERE" more general)>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+-- TITLE: UPDATING MULTIPLE ROWS (same like single row, just make "WHERE" more general) >>>
 UPDATE invoices 
 SET 
 	payment_total = invoice_total * 0.5,
     payment_date = due_date
-WHERE client_id = 3 -- you can even do something like >>> client_id IN (3, 4)
+WHERE client_id = 3 -- you can even write something like > client_id IN (3, 4)
