@@ -25,7 +25,7 @@ WHERE client_id IN
 UPDATE orders
 SET comments = 'GOLD CUSTOMER'
 WHERE customer_id IN         
--- use IN not equals=, cause subquery returns multiple records!
+-- use IN not equals (=), cause subquery returns multiple records!
 	(SELECT customer_id 
 	FROM customers
 	WHERE points > 3000) 
@@ -38,7 +38,6 @@ DELETE FROM invoices
 WHERE client_id = (     
 -- this line is optional!
 	SELECT *      
-    -- I guess in subquery when you're deleting, just select *All ????????
     FROM clients
     WHERE name = 'Myworks'
 )
