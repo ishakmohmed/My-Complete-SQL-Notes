@@ -51,7 +51,7 @@ LEFT JOIN invoices USING (client_id)
 WHERE invoice_id IS NULL
 
  -- **************************************************
-
+ 
 -- EXERCISE (USING SUBQUERY NOW): FIND CUSTOMERS WHO ORDERED LETTUCE (product_id = 3) >>>
 SELECT *
 FROM customers
@@ -89,7 +89,7 @@ WHERE invoice_total > (
 -- with ALL (same result) >>>
 SELECT *
 FROM invoices
-WHERE invoice_total > ALL(            
+WHERE invoice_total > ALL (            
 -- in previous implementation, mysql compared each row with max value, now its comparing each row with all multiple invoice total of client with ID 3!
 	SELECT invoice_total
     FROM invoices
@@ -110,7 +110,7 @@ WHERE client_id IN (
 	FROM invoices
 	GROUP BY client_id
 	HAVING COUNT(*) >= 2         
-    -- iirc, having needa refer to cols in SELECT, but I guess COUNT(*) is a general thing so nvm???
+    -- iirc, HAVING needa refer to cols in SELECT, but I guess COUNT(*) is a general thing so nvm???
 )
 
 -- **************************************************
@@ -193,7 +193,7 @@ SELECT
 	invoice_id,
 	invoice_total, 
     (SELECT AVG(invoice_total) FROM invoices) AS invoice_average,  
--- I guess you're using subquery because you want the same invoice average for all records
+-- I guess you're using subquery because you want the same invoice average for all records (confirmed!)
     invoice_total - (SELECT invoice_average) AS difference 
 -- note: you cannot use column alias in expression, so either copy the entire expression or SELECT alias name
 FROM invoices
