@@ -19,7 +19,7 @@ GROUP BY client_id, name;
 
 USE sql_invoicing;
 CREATE OR REPLACE VIEW clients_balance AS
--- OR REPLACE is optional
+-- "OR REPLACE" is optional
 -- also, you can > DROP VIEW clients_balance to drop this view
 SELECT 
 	c.client_id,
