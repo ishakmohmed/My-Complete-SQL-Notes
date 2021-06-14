@@ -34,7 +34,7 @@ SELECT
     LOCATE('N', 'kindergarten'), 
     -- returns the first occurence, AND NOT CASE SENSITIVE!!!
 	LOCATE('X', 'kindergarten'), 
-    -- returns 0 if it doenst exist, unlike most of the other programming languages
+    -- returns 0 if it doenst exist, unlike most of the other programming languages  which would return -1
     LOCATE('garten', 'kindergarten'), 
     -- LISTEN, YOU CAN ALSO SEARCH FOR SEQUENCE OF CHARACTERS LIKE WORDS HERE
     REPLACE('kindergarten', 'garten', 'ABCDEF'),
