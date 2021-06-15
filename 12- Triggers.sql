@@ -136,30 +136,6 @@ SHOW EVENTS LIKE 'yearly%';
 
 DROP EVENT IF EXISTS yearly_delete_stale_audit_rows;
 
-
 -- you can also > ALTER EVENT... and the syntax is similar with CREATE EVENT
 -- or >
 ALTER EVENT yearly_delete_stale_audit_rows ENABLE;    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
-
