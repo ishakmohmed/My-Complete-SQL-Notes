@@ -176,7 +176,6 @@ BEGIN
     SET risk_factor = invoices_total / invoices_count * 5;
     
     SELECT risk_factor;
-    
 END
 
 -- **************************************************
