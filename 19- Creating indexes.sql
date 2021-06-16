@@ -88,6 +88,7 @@ DROP INDEX idx_points ON customers;
 -- When indexes are ignored >>>
 
 CREATE INDEX idx_points ON customers (points);
+-- ^ assuming there exists an index for state, if no need to add an index for state too
 
 -- the statement ...WHERE state = 'CA' or points > 1000 will scan all lines, so >
 
@@ -120,14 +121,3 @@ SHOW STATUS LIKE 'last_query_cost';
 -- but you cannot (I mean you can but the cost of operation will be heavy):
 -- a, c, b
 -- b
-
-
-
-
-
-
-
-
-
-
-
