@@ -6,7 +6,8 @@ CREATE DATABASE IF NOT EXISTS sql_store2;
 USE sql_store2;
 
 -- DROP TABLE IF EXISTS customers or CREATE TABLE IF NOT EXISTS customers (actually you can use both)
-DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS orders; 
+-- the order of these DROP statements matter!
 DROP TABLE IF EXISTS customers;
 
 CREATE TABLE IF NOT EXISTS customers
@@ -87,7 +88,7 @@ CREATE DATABASE db_name
 
 -- **************************************************
 
--- Storage engines 
+-- Storage engines >>>
 
 SHOW ENGINES;
 
